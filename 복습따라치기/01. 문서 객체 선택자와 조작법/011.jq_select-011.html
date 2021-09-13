@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,6 @@
     <title>형/동생 요소 선택자</title>
     <script src="../js/jquery-3.6.0.min.js"></script>
 </head>
-
 <body>
     <h1>부모 요소 선택자</h1>
     <div id="wrap">
@@ -24,32 +22,25 @@
         </section>
     </div>
     <script>
-        $(function () {
-            //형 요소 선택자 = 내용3 선택
+        $(function(){
+            //형 요소 선택자
             $(".txt").prev().css({
                 "border": "1px solid red",
-                "background-color": "#ff0"
+                "background-color": "yellow"
             });
-
-            //동생 요소 선택자 = 내용5 선택
-            $(".txt").next().css({
-                "border": "1px solid red",
-                "background-color": "#ff0" 
-            });
-
-            //동생 요소 선택자 = 내용6 선택
+            
+            //동생 요소 선택자
             $(".txt").next().next().css({
                 "border": "1px solid red",
-                "background-color": "#ff0" 
+                "background-color": "skyblue"
             });
-
-            // 동생 요소 선택자 = 내용5 선택
-            // $(".txt + p ").css({
-            //     "border": "1px solid red",
-            //     "background-color": "#ff0"
-            // });
+            
+            //동생 요소 선택자
+            $(".txt + p").css({
+                "border": "1px solid red",
+                "background-color": "gray"    
+            });
         });
     </script>
 </body>
-
 </html>
