@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nth-child(숫자) / nth-last-child 위치 탐색 선택자</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>child(숫자) / nth-last-child 위치 탐색 선택자</h1>
+    <ul id="menu1">
+        <li>내용1-1</li>
+        <li>내용1-2</li>
+        <li>내용1-3</li>
+        <li>내용1-4</li>
+    </ul>
+    <ul id="menu2">
+        <li>내용2-1</li>
+        <li>내용2-2</li>
+        <li>내용2-3</li>
+        <li>내용2-4</li>
+    </ul>
+    <script>
+        //지정한 위치에 있는 요소 선택
+        //내용1-1
+        $("#menu1 li:nth-child(1)").css({
+            "border": "1px solid red",
+            "background-color": "#ff0"
+        });
+
+        //지정한 위치에 있는 요소 선택(2배수)
+        //내용1-2, 내용1-4선택
+        $("#menu1 li:nth-child(2n)").css({
+            "border": "1px solid red",
+            "background-color": "skyblue"
+        });
+
+        //마지막 요소 기준으로 지정된 숫자만큼 떨어져 있는 요소 선택
+        //내용2-3선택
+        $("#menu2 li:nth-last-child(2)").css({
+            "border": "1px solid red",
+            "background-color": "gray"
+        });
+
+    </script>
+</body>
+
+</html>
