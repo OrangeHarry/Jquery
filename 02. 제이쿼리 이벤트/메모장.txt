@@ -1,0 +1,19 @@
+//단독 이벤트 등록
+$("#btn").click(function(){
+    자바스크립트 코드
+});
+
+//그룹 이벤트 등록-1
+$("#btn").on("click" "dbclick", function(){
+    자바스크립트 코드
+});
+
+//그룹 이벤트 등록-2
+$("#btn").on({
+    "click" : function(){
+
+    },
+    "dbclick" : function(){
+
+    }
+});
