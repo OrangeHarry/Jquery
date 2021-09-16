@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>focus()/blur()/focusin()/focusout() 이벤트 메소드</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>focus / blur</h1>
+    <form action="#">
+        <p>
+            <label for="user_id_1">ID</label>
+            <input type="text" name="user_id_1" id="user_id_1">
+        </p>
+        <p>
+            <label for="user_pw_1">PW</label>
+            <input type="password" name="user_pw_1" id="user_pw_1">
+        </p>
+    </form>
+    <h1>focusin / focusout</h1>
+    <form action="#" id="frm_2">
+        <p>
+            <label for="user_id_2">ID</label>
+            <input type="text" name="user_id_2" id="user_id_2">
+        </p>
+        <p>
+            <label for="user_pw_2">PW</label>
+            <input type="password" name="user_pw_2" id="user_pw_2">
+        </p>
+    </form>
+    <script>
+        $(function () {
+            //user_id_1, user_pw_1 요소에 포커스가 갔을때 배경을 분홍색으로 변경
+            $("#user_id_1, #user_pw_1").on("focus", function () {
+                $(this).css({
+                    "background-color": "pink"
+                });
+            });
+            //user_id_1, user_pw_1 요소에서 포커스가 빠져나갔을 때 배경을 흰색으로 변경
+            $("#user_id_1, #user_pw_1").on("blur", function () {
+                $(this).css({
+                    "background-color": "white"
+                });
+            });
+            //frm 요소에 focus가 갔을 때 배경을 분홍색으로 변경
+            $("#frm_2").on("focusin", function () {
+                $(this).css({
+                    "background-color": "pink"
+                });
+            });
+            //frm 요소에서 focus가 빠져나갔을 때 배경색 흰색으로 변경
+            $("#frm_2").on("focusout", function () {
+                $(this).css({
+                    "background-color": "white"
+                });
+            });
+            //user_id_1요소에 focus 강제로 줌
+            $("#user_id_1").focus();
+        });
+    </script>
+</body>
+
+</html>
