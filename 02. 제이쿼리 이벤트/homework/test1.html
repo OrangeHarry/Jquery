@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교재 연습문제</title>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <ul class="gnb">
+        <button><a href="#">menu1</a></button>
+        <button><a href="#">menu2</a></button>
+        <button><a href="#">menu3</a></button>
+        <button><a href="#">menu4</a></button>
+    </ul>
+    <script>
+        $(function () {
+            var beforeMenu = null;
+
+            $(".gnb a").on("mouseover focus", function () {
+                if (beforeMenu) beforeMenu.css({
+                    "background-color": "none"
+                });
+                $(this).css({
+                    "background-color": "red"
+                });
+                beforeMenu = $(this);
+            });
+            $(".gnb a").on("mouseleave", function () {
+                if (beforeMenu) beforeMenu.css({
+                    "background": "none"
+                }); 
+            });
+        });
+    </script>
+</body>
+
+</html>

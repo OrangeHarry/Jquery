@@ -1,0 +1,3 @@
+var bxslider = (".txt").bxSlider({
+    bxslider 관련 옵션들
+})
